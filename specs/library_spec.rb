@@ -62,8 +62,8 @@ class TestLibrary < MiniTest::Test
   end
 
   def test_update_rental_details_not_found
-    @library.update_rental_details("pride_and_prejudice", "Maria", "28/02/18")
-    rental_details = @library.book_rental_details("pride_and_prejudice")
+    @library.update_rental_details("Pride and Prejudice", "Maria", "28/02/18")
+    rental_details = @library.book_rental_details("Pride and Prejudice")
     assert_equal("book not found", rental_details)
   end
 
