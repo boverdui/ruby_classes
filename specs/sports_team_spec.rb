@@ -35,13 +35,13 @@ class TestSportsTeam < MiniTest::Test
   end
 
   def test_find_player
-    player = @team.find_player("Hoggy")
-    assert_equal("Hoggy is part of the team!", player)
+    in_team = @team.find_player("Hoggy")
+    assert_equal(true, in_team)
   end
 
   def test_find_player_not_found
-    player = @team.find_player("Visser")
-    assert_equal("Visser isn't part of the team!", player)
+    in_team = @team.find_player("Visser")
+    assert_equal(false, in_team)
   end
 
   def test_win
@@ -49,5 +49,5 @@ class TestSportsTeam < MiniTest::Test
     points = @team.points
     assert_equal(1, points)
   end
-  
+
 end

@@ -16,9 +16,9 @@ class SportsTeam
   def find_player(player_name)
     for player in @players
       if player == player_name
-        return "#{player_name} is part of the team!"
+        return true
       else
-        return "#{player_name} isn't part of the team!"
+        return false
       end
     end
   end
