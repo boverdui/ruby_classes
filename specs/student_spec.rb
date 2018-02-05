@@ -7,36 +7,36 @@ class TestStudent < MiniTest::Test
     @student = Student.new("Bert", 19)
   end
 
-  def test_student_name
-    name = @student.name()
+  def test_get_name
+    name = @student.get_name()
     assert_equal("Bert", name)
   end
 
-  def test_student_cohort
-    cohort = @student.cohort()
+  def test_get_cohort
+    cohort = @student.get_cohort()
     assert_equal(19, cohort)
   end
 
-  def test_set_student_name
+  def test_set_name
     @student.set_name("Dan")
-    name = @student.name()
+    name = @student.get_name()
     assert_equal("Dan", name)
   end
 
-  def test_set_student_cohort
+  def test_set_cohort
     @student.set_cohort(20)
-    cohort = @student.cohort()
+    cohort = @student.get_cohort()
     assert_equal(20, cohort)
   end
 
   def test_student_talk
-    sentence = @student.talk()
-    assert_equal("I can talk!", sentence)
+    blablabla = @student.talk()
+    assert_equal("I can talk!", blablabla)
   end
 
   def test_student_say_favourite_language
-    favourite_language = @student.say_favourite_language("Ruby")
-    assert_equal("I love Ruby!", favourite_language)
+    ruby_love = @student.say_favourite_language("Ruby")
+    assert_equal("I love Ruby!", ruby_love)
   end
 
 end

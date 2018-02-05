@@ -4,48 +4,50 @@ require_relative('../sports_team')
 class TestSportsTeam < MiniTest::Test
 
   def setup
-    @team = SportsTeam.new("Scotland", ["Hoggy", "Finn", "Laidlaw"], "Toonie", 0)
+    @team = SportsTeam.new("Scotland", ["Hoggy", "Russell", "Laidlaw"], "Townsend", 0)
   end
 
-  def test_team_name
+  def test_name
     name = @team.name()
     assert_equal("Scotland", name)
   end
 
-  def test_team_players
+  def test_players
     players = @team.players()
-    assert_equal(["Hoggy", "Finn", "Laidlaw"], players)
+    assert_equal(["Hoggy", "Russell", "Laidlaw"], players)
   end
 
-  def test_team_coach
+  def test_coach
     coach = @team.coach()
-    assert_equal("Toonie", coach)
+    assert_equal("Townsend", coach)
   end
 
   def test_set_coach
-    @team.coach = "Vern"
+    @team.coach = "Cotter"
     coach = @team.coach()
-    assert_equal("Vern", coach)
+    assert_equal("Cotter", coach)
   end
 
   def test_add_player
     @team.add_player("Price")
     players = @team.players()
-    assert_equal(["Hoggy", "Finn", "Laidlaw", "Price"], players)
+    assert_equal(["Hoggy", "Russell", "Laidlaw", "Price"], players)
   end
 
   def test_find_player
-    player_name = @team.find_player("Hoggy")
-    assert_equal("Hoggy is part of the team!", player_name)
+    player = @team.find_player("Hoggy")
+    assert_equal("Hoggy is part of the team!", player)
   end
 
   def test_find_player_not_found
-    player_name = @team.find_player("Barclay")
-    assert_equal("Barclay isn't part of the team!", player_name)
+    player = @team.find_player("Visser")
+    assert_equal("Visser isn't part of the team!", player)
   end
 
   def test_win
-    points= @team.win()
+    @team.win()
+    points = @team.points
     assert_equal(1, points)
   end
+  
 end
